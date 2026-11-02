@@ -12,12 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="legal.css" />
+    <link rel="stylesheet" href="storefront-theme.css" />
   </head>
-  <body>
-    <div class="shipping-bar">Envíos a toda Colombia <span>•</span> Compra fácil por WhatsApp</div>
+  <body class="storefront">
+    <div class="shipping-bar"><span class="shipping-orbit">✦</span> Envíos a toda Colombia <span>•</span> Compra fácil por WhatsApp <span class="shipping-orbit">✦</span></div>
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Mundo de las Tenis, inicio">
-        <span class="brand-mark">MD</span><span>MUNDO<br />DE LAS <i>TENIS</i></span>
+        <img class="brand-logo" src="imagenes/Logo.jpeg" alt="" /><span class="brand-name">MUNDO<br />DE LAS <i>TENIS</i></span>
       </a>
       <nav class="desktop-nav" aria-label="Navegación principal">
         <a href="#catalogo">Catálogo</a>
@@ -36,16 +37,17 @@
     <main>
       <section class="hero" id="inicio">
         <div class="hero-copy">
-          <p class="eyebrow">SNEAKERS PARA TU RITMO</p>
-          <h1>No sigas<br /><em>tendencias.</em><br />Písalas.</h1>
-          <p class="hero-text">Encuentra ese par que cambia todo tu outfit. Originales, cómodos y listos para salir contigo.</p>
-          <a class="button button-dark" href="#catalogo">Ver colección <span>↓</span></a>
-          <div class="hero-points"><span>✓ Atención personalizada</span><span>✓ Pago seguro por transferencia</span></div>
+          <p class="eyebrow">✦ SNEAKERS PARA TU ÓRBITA</p>
+          <h1>Tu estilo<br />no tiene<br /><em>límites.</em></h1>
+          <p class="hero-text">Descubre pares con actitud para llevar tu outfit a otra galaxia. Elige, arma tu pedido y coordina por WhatsApp.</p>
+          <a class="button button-dark" href="#catalogo">Explorar colección <span>↓</span></a>
+          <div class="hero-points"><span>✦ Atención personalizada</span><span>✦ Envíos a toda Colombia</span></div>
         </div>
         <div class="hero-visual">
+          <img class="hero-cosmos" src="imagenes/Logo.jpeg" alt="" aria-hidden="true" />
           <p class="vertical-text">MUNDO DE LAS TENIS — COLOMBIA</p>
           <div class="hero-sticker">NUEVOS<br /><b>DROPS</b><br />CADA SEMANA</div>
-          <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1200&q=90" alt="Zapatilla deportiva blanca" />
+          <img class="hero-shoe" src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1200&q=90" alt="Zapatilla deportiva blanca" />
           <div class="hero-number">01</div>
         </div>
       </section>
@@ -56,7 +58,7 @@
 
       <section class="catalog-section" id="catalogo">
         <div class="section-heading">
-          <div><p class="eyebrow">ELIGE TU PRÓXIMO PAR</p><h2>Últimos <em>drops.</em></h2></div>
+          <div><p class="eyebrow">COLECCIÓN EN ÓRBITA</p><h2>Últimos <em>drops.</em></h2></div>
           <p id="productTotal" class="product-total">Cargando catálogo...</p>
         </div>
         <div class="catalog-toolbar">
@@ -69,7 +71,7 @@
 
       <section class="story-section" id="nosotros">
         <div class="story-image"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85" alt="Tenis rojos sobre fondo colorido" /><span>DESDE<br />COLOMBIA</span></div>
-        <div class="story-copy"><p class="eyebrow">MÁS QUE UNA TIENDA</p><h2>Hechas para<br /><em>moverte.</em></h2><p>En Mundo de las Tenis creemos que un buen par de zapatillas dice mucho de ti. Por eso seleccionamos referencias con actitud, comodidad y ese toque que no pasa desapercibido.</p><a href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer" class="text-link">Conócenos en Instagram <span>↗</span></a></div>
+        <div class="story-copy"><p class="eyebrow">MÁS QUE UNA TIENDA</p><h2>Diseñadas para<br /><em>destacar.</em></h2><p>En Mundo de las Tenis creemos que un buen par cambia por completo tu energía. Seleccionamos referencias con comodidad, presencia y ese detalle que se queda en la cabeza.</p><a href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer" class="text-link">Conócenos en Instagram <span>↗</span></a></div>
       </section>
 
       <section class="purchase-section" id="como-comprar">
@@ -85,7 +87,7 @@
     </main>
 
     <footer>
-      <a class="brand footer-brand" href="#inicio"><span class="brand-mark">MD</span><span>MUNDO<br />DE LAS <i>TENIS</i></span></a>
+      <a class="brand footer-brand" href="#inicio"><img class="brand-logo" src="imagenes/Logo.jpeg" alt="" /><span class="brand-name">MUNDO<br />DE LAS <i>TENIS</i></span></a>
       <div><p>¿Tienes dudas? Escríbenos.</p><a href="https://wa.me/573217430829" target="_blank" rel="noreferrer" class="footer-contact">+57 321 743 0829 ↗</a></div>
       <div><p>Síguenos para ver nuevos lanzamientos.</p><a href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer" class="footer-contact">@MUNDODELASTENIS ↗</a></div>
       <nav class="footer-legal" aria-label="Información legal">
