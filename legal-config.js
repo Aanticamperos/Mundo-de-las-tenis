@@ -1,8 +1,8 @@
 /* Completa los campos vacíos antes de publicar las políticas como versión definitiva. */
 window.LEGAL_CONFIG = {
   tradeName: 'Mundo de las Tenis',
-  legalResponsibleName: '',
-  contactEmail: '',
+  legalResponsibleName: 'Santiago Bastidas Cerón',
+  contactEmail: 'santiago.bastidas2001@gmail.com',
   whatsappNumber: '573217430829',
   whatsappDisplay: '+57 321 743 0829',
   domain: 'https://mundodelastenis.online',
