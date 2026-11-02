@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101010" />
+    <title>Mundo de las Tenis | Sneakers que se sienten tuyas</title>
+    <meta name="description" content="Compra tus zapatillas favoritas en Mundo de las Tenis. Arma tu pedido y envíalo por WhatsApp." />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="legal.css" />
+  </head>
+  <body>
+    <div class="shipping-bar">Envíos a toda Colombia <span>•</span> Compra fácil por WhatsApp</div>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Mundo de las Tenis, inicio">
+        <span class="brand-mark">MD</span><span>MUNDO<br />DE LAS <i>TENIS</i></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#como-comprar">Cómo comprar</a>
+      </nav>
+      <div class="header-actions">
+        <a class="instagram-link" href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer" aria-label="Instagram Mundo de las Tenis">◎ <span>@MUNDODELASTENIS</span></a>
+        <button id="cartButton" class="cart-button" aria-label="Abrir carrito">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.3 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L20.5 8H7M10 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
+          <span>Mi bolsa</span><b id="cartCount">0</b>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow">SNEAKERS PARA TU RITMO</p>
+          <h1>No sigas<br /><em>tendencias.</em><br />Písalas.</h1>
+          <p class="hero-text">Encuentra ese par que cambia todo tu outfit. Originales, cómodos y listos para salir contigo.</p>
+          <a class="button button-dark" href="#catalogo">Ver colección <span>↓</span></a>
+          <div class="hero-points"><span>✓ Atención personalizada</span><span>✓ Pago seguro por transferencia</span></div>
+        </div>
+        <div class="hero-visual">
+          <p class="vertical-text">MUNDO DE LAS TENIS — COLOMBIA</p>
+          <div class="hero-sticker">NUEVOS<br /><b>DROPS</b><br />CADA SEMANA</div>
+          <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1200&q=90" alt="Zapatilla deportiva blanca" />
+          <div class="hero-number">01</div>
+        </div>
+      </section>
+
+      <section class="marquee" aria-label="Beneficios">
+        <div><span>STREETWEAR</span><i>✦</i><span>ENVÍOS NACIONALES</span><i>✦</i><span>COMPRA POR WHATSAPP</span><i>✦</i><span>ADDI DISPONIBLE</span><i>✦</i><span>STREETWEAR</span><i>✦</i><span>ENVÍOS NACIONALES</span><i>✦</i></div>
+      </section>
+
+      <section class="catalog-section" id="catalogo">
+        <div class="section-heading">
+          <div><p class="eyebrow">ELIGE TU PRÓXIMO PAR</p><h2>Últimos <em>drops.</em></h2></div>
+          <p id="productTotal" class="product-total">Cargando catálogo...</p>
+        </div>
+        <div class="catalog-toolbar">
+          <div id="filters" class="filters" aria-label="Filtros de categoría"></div>
+          <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar referencias" aria-label="Buscar referencias" /></label>
+        </div>
+        <div id="catalogMessage" class="catalog-message" hidden></div>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+
+      <section class="story-section" id="nosotros">
+        <div class="story-image"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85" alt="Tenis rojos sobre fondo colorido" /><span>DESDE<br />COLOMBIA</span></div>
+        <div class="story-copy"><p class="eyebrow">MÁS QUE UNA TIENDA</p><h2>Hechas para<br /><em>moverte.</em></h2><p>En Mundo de las Tenis creemos que un buen par de zapatillas dice mucho de ti. Por eso seleccionamos referencias con actitud, comodidad y ese toque que no pasa desapercibido.</p><a href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer" class="text-link">Conócenos en Instagram <span>↗</span></a></div>
+      </section>
+
+      <section class="purchase-section" id="como-comprar">
+        <div class="purchase-title"><p class="eyebrow">ASÍ DE FÁCIL</p><h2>Tu nuevo par<br />está a <em>un chat.</em></h2></div>
+        <ol class="steps"><li><span>01</span><h3>Elige</h3><p>Explora el catálogo y selecciona tu talla.</p></li><li><span>02</span><h3>Agrega</h3><p>Arma tu bolsa con todos tus favoritos.</p></li><li><span>03</span><h3>Escríbenos</h3><p>Envía el pedido directamente por WhatsApp.</p></li><li><span>04</span><h3>Recibe</h3><p>Coordinamos pago y envío contigo.</p></li></ol>
+      </section>
+
+      <section class="payments-section">
+        <p class="eyebrow">PAGA COMO PREFIERAS</p>
+        <div><h2>Métodos de pago <em>disponibles.</em></h2><div class="payment-list"><span>TRANSFERENCIA</span><span>ADDI</span><span>SISTECREDITO</span></div></div>
+        <p class="payment-note">No manejamos pago contraentrega por ahora.</p>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="#inicio"><span class="brand-mark">MD</span><span>MUNDO<br />DE LAS <i>TENIS</i></span></a>
+      <div><p>¿Tienes dudas? Escríbenos.</p><a href="https://wa.me/573217430829" target="_blank" rel="noreferrer" class="footer-contact">+57 321 743 0829 ↗</a></div>
+      <div><p>Síguenos para ver nuevos lanzamientos.</p><a href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer" class="footer-contact">@MUNDODELASTENIS ↗</a></div>
+      <nav class="footer-legal" aria-label="Información legal">
+        <p>Información legal</p>
+        <a href="politica-de-privacidad/">Política de privacidad</a>
+        <a href="terminos-y-condiciones/">Términos y condiciones</a>
+        <a href="eliminacion-de-datos/">Eliminación de datos</a>
+      </nav>
+      <p class="copyright">© 2026 MUNDO DE LAS TENIS</p>
+    </footer>
+
+    <aside id="cartPanel" class="cart-panel" aria-hidden="true" aria-label="Tu bolsa de compras">
+      <div class="cart-head"><h2>Tu <em>bolsa.</em></h2><button id="closeCart" class="icon-button" aria-label="Cerrar carrito">×</button></div>
+      <div id="cartItems" class="cart-items"></div>
+      <div id="cartEmpty" class="cart-empty"><span>⌑</span><p>Tu bolsa está vacía.</p><button id="exploreButton" class="text-link">Explorar catálogo <b>↓</b></button></div>
+      <div id="cartSummary" class="cart-summary" hidden><div><span>Subtotal</span><strong id="cartSubtotal">$0</strong></div><small>El valor del envío se confirma por WhatsApp.</small><button id="whatsappOrder" class="button button-whatsapp">Finalizar pedido por WhatsApp <span>↗</span></button><p>Al continuar, te redirigiremos a WhatsApp con el resumen de tu pedido.</p></div>
+    </aside>
+    <div id="overlay" class="overlay" hidden></div>
+    <dialog id="productDialog" class="product-dialog"><button id="closeDialog" class="icon-button dialog-close" aria-label="Cerrar">×</button><div id="dialogContent"></div></dialog>
+    <template id="productTemplate"><article class="product-card"><button class="product-image" type="button"><img loading="lazy" /><span class="product-badge" hidden></span><span class="quick-view">Ver detalles <b>↗</b></span></button><div class="product-info"><div><p class="product-category"></p><h3></h3></div><strong></strong></div></article></template>
+    <script src="app.js"></script>
+  </body>
+</html>
