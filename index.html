@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="social-buttons.css" />
     <link rel="stylesheet" href="space-refinement.css" />
     <link rel="stylesheet" href="size-guide.css" />
+    <link rel="stylesheet" href="payment-showcase.css" />
   </head>
   <body class="storefront">
     <div class="shipping-bar"><span class="shipping-orbit">✦</span> Envíos a toda Colombia <span>•</span> Compra fácil por WhatsApp <span class="shipping-orbit">✦</span></div>
@@ -90,9 +91,32 @@
       </section>
 
       <section class="payments-section">
-        <p class="eyebrow">PAGA COMO PREFIERAS</p>
-        <div><h2>Métodos de pago <em>disponibles.</em></h2><div class="payment-list"><span>TRANSFERENCIA</span><span>ADDI</span><span>SISTECREDITO</span></div></div>
-        <p class="payment-note">No manejamos pago contraentrega por ahora.</p>
+        <div class="payment-heading">
+          <p class="eyebrow">PAGA A TU MANERA</p>
+          <h2>Opciones que<br /><em>se adaptan a ti.</em></h2>
+          <p>Elige el método que prefieras y terminamos de confirmar tu pedido por WhatsApp.</p>
+        </div>
+        <div class="payment-methods" aria-label="Métodos de pago disponibles">
+          <article class="payment-card payment-transfer">
+            <div class="payment-card-top"><span>01</span><span>Disponible</span></div>
+            <div class="payment-transfer-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 16h32M8 24h32M8 32h21M34 29l6 3-6 3"/></svg></div>
+            <h3>Transferencia</h3>
+            <p>Coordinamos los datos y confirmamos tu pago directamente por WhatsApp.</p>
+          </article>
+          <article class="payment-card payment-brand payment-addi">
+            <div class="payment-card-top"><span>02</span><span>Disponible</span></div>
+            <div class="payment-logo-wrap"><img src="imagenes/logo ADDI.png" alt="Addi" /></div>
+            <h3>Compra con Addi</h3>
+            <p>Pregunta por esta alternativa al momento de confirmar tu pedido.</p>
+          </article>
+          <article class="payment-card payment-brand payment-sistecredito">
+            <div class="payment-card-top"><span>03</span><span>Disponible</span></div>
+            <div class="payment-logo-wrap"><img src="imagenes/SISTECREDITO LOGO.jpg" alt="Sistecrédito" /></div>
+            <h3>Paga con Sistecrédito</h3>
+            <p>Consulta la disponibilidad de este medio cuando armes tu pedido.</p>
+          </article>
+        </div>
+        <p class="payment-note"><span>✦</span> Por ahora no manejamos pago contraentrega.</p>
       </section>
     </main>
 
