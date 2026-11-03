@@ -28,13 +28,20 @@ async function loadCatalog() {
     const response = await fetch(`catalogo.csv?v=${Date.now()}`);
     if (!response.ok) throw new Error('No se encontró el catálogo');
     products = parseCSV(await response.text()).filter(p => p.id && p.nombre);
-    if (!products.length) throw new Error('El catálogo está vacío');
+    if (!products.length) { renderEmptyCatalog(); return; }
     renderCatalog();
   } catch (error) {
     $('#catalogMessage').hidden = false;
     $('#catalogMessage').innerHTML = '<strong>No pudimos cargar el catálogo.</strong> Abre la tienda desde un servidor (por ejemplo, Live Server) para leer <code>catalogo.csv</code>.';
     $('#productTotal').textContent = 'Catálogo no disponible';
   }
+}
+
+function renderEmptyCatalog() {
+  $('#filters').innerHTML = '';
+  $('#productTotal').textContent = 'Nueva colección próximamente';
+  $('#catalogMessage').hidden = true;
+  $('#productGrid').innerHTML = '<section class="catalog-launch" aria-labelledby="catalogLaunchTitle"><span class="catalog-launch-star">✦</span><p class="eyebrow">MUNDO DE LAS TENIS</p><h3 id="catalogLaunchTitle">Estamos preparando<br /><em>el próximo drop.</em></h3><p>Muy pronto encontrarás nuevas referencias. Síguenos en Instagram o escríbenos por WhatsApp para conocer los próximos lanzamientos.</p><a class="button button-dark" href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer">Ver Instagram <span>↗</span></a></section>';
 }
 
 function renderCatalog() {
