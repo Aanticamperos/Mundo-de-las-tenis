@@ -93,10 +93,24 @@ function renderCart() {
 }
 function openCart() { $('#cartPanel').classList.add('open'); $('#cartPanel').setAttribute('aria-hidden', 'false'); $('#overlay').hidden = false; document.body.classList.add('locked'); }
 function closeCart() { $('#cartPanel').classList.remove('open'); $('#cartPanel').setAttribute('aria-hidden', 'true'); $('#overlay').hidden = true; document.body.classList.remove('locked'); }
+function resolveProductImage(imagen) {
+  if (!imagen) return '';
+  try {
+    return new URL(imagen, location.href).href;
+  } catch {
+    return String(imagen).trim();
+  }
+}
 function sendOrder() {
-  const lines = cart.map(item => `• ${item.quantity}x ${item.nombre} — Talla ${item.size} — ${item.precio}`);
+  const lines = cart.map(item => {
+    const details = [`• ${item.quantity}x ${item.nombre} — Talla ${item.size} — ${item.precio}`];
+    if (item.id) details.push(`   Ref: ${item.id}`);
+    const imageUrl = resolveProductImage(item.imagen);
+    if (imageUrl) details.push(`   Foto: ${imageUrl}`);
+    return details.join('\n');
+  });
   const total = cart.reduce((sum, item) => sum + priceNumber(item.precio) * item.quantity, 0);
-  const message = `¡Hola, Mundo de las Tenis! 👟%0A%0AQuiero hacer este pedido:%0A${encodeURIComponent(lines.join('\n'))}%0A%0ASubtotal de productos: ${encodeURIComponent(peso(total))}%0A%0AMi nombre es: %0AMi ciudad/dirección: %0A%0AQuedo atento(a) a confirmar disponibilidad, envío y método de pago.`;
+  const message = `¡Hola, Mundo de las Tenis! 👟%0A%0AQuiero hacer este pedido:%0A${encodeURIComponent(lines.join('\n\n'))}%0A%0ASubtotal de productos: ${encodeURIComponent(peso(total))}%0A%0AMi nombre es: %0AMi ciudad/dirección: %0A%0AQuedo atento(a) a confirmar disponibilidad, envío y método de pago.`;
   window.open(`https://wa.me/${WHATSAPP}?text=${message}`, '_blank', 'noopener');
 }
 
