@@ -1,156 +1,740 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-CO">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#101010" />
+    <meta name="theme-color" content="#0a0a0d" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <title>Mundo de las Tenis | Sneakers que se sienten tuyas</title>
-    <meta name="description" content="Compra tus zapatillas favoritas en Mundo de las Tenis. Arma tu pedido y envíalo por WhatsApp." />
-    <link rel="preconnect" href="https://images.unsplash.com" />
+    <title>Mundo de las Tenis | Tienda de Zapatillas en Colombia</title>
+    <meta
+      name="description"
+      content="Explora +100 referencias de zapatillas Lifestyle, Retro y Running en Mundo de las Tenis. Envíos a toda Colombia, Addi, Sistecrédito y atención por WhatsApp."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Oswald:wght@600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="legal.css" />
-    <link rel="stylesheet" href="storefront-theme.css" />
-    <link rel="stylesheet" href="social-buttons.css" />
-    <link rel="stylesheet" href="space-refinement.css" />
-    <link rel="stylesheet" href="size-guide.css" />
-    <link rel="stylesheet" href="payment-showcase.css" />
-    <link rel="stylesheet" href="credit-card-option.css" />
-    <link rel="stylesheet" href="empty-catalog.css" />
   </head>
-  <body class="storefront">
-    <div class="shipping-bar"><span class="shipping-orbit">✦</span> Envíos a toda Colombia <span>•</span> Compra fácil por WhatsApp <span class="shipping-orbit">✦</span></div>
+  <body>
+    <div class="shipping-bar" aria-label="Beneficios de la tienda">
+      <div class="marquee-track">
+        <span>ENVÍOS A TODA COLOMBIA</span><i>✦</i>
+        <span>COMPRA FÁCIL POR WHATSAPP</span><i>✦</i>
+        <span>ADDI &amp; SISTECRÉDITO DISPONIBLE</span><i>✦</i>
+        <span>NUEVOS DROPS CADA SEMANA</span><i>✦</i>
+        <span>ENVÍOS A TODA COLOMBIA</span><i>✦</i>
+        <span>COMPRA FÁCIL POR WHATSAPP</span><i>✦</i>
+        <span>ADDI &amp; SISTECRÉDITO DISPONIBLE</span><i>✦</i>
+        <span>NUEVOS DROPS CADA SEMANA</span><i>✦</i>
+      </div>
+    </div>
+
     <header class="site-header">
-      <a class="brand" href="#inicio" aria-label="Mundo de las Tenis, inicio">
-        <img class="brand-logo" src="imagenes/Logo.jpeg" alt="" /><span class="brand-name">MUNDO<br />DE LAS <i>TENIS</i></span>
-      </a>
-      <nav class="desktop-nav" aria-label="Navegación principal">
-        <a href="#catalogo">Catálogo</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#como-comprar">Cómo comprar</a>
-      </nav>
-      <div class="header-actions">
-        <nav class="social-links" aria-label="Redes sociales">
-          <a class="social-link instagram-link" href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer" aria-label="Visitar Instagram de Mundo de las Tenis">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="social-dot" cx="17.5" cy="6.5" r="1"/></svg><span>@MUNDODELASTENIS</span>
+      <div class="header-inner">
+        <div class="header-left">
+          <button id="menuToggle" class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileMenu">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+          <a class="brand" href="#inicio" aria-label="Mundo de las Tenis, inicio">
+            <img class="brand-logo" src="imagenes/Logo.jpeg" alt="" />
+            <span class="brand-name">MUNDO<br />DE LAS <i>TENIS</i></span>
           </a>
-          <a class="social-link facebook-link" href="https://www.facebook.com/profile.php?id=61576472572149" target="_blank" rel="noreferrer" aria-label="Visitar Facebook de Mundo de las Tenis">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5H17V3.7c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2H7.5V13h2.8v8h3.4Z"/></svg><span>FACEBOOK</span>
-          </a>
+        </div>
+
+        <nav class="desktop-nav" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#catalogo" data-quick-filter="reset">Catálogo</a>
+          <a href="#catalogo" data-quick-filter="gender:Hombre">Hombre</a>
+          <a href="#catalogo" data-quick-filter="gender:Mujer">Mujer</a>
+          <a href="#catalogo" data-quick-filter="category:Lifestyle">Lifestyle</a>
+          <a href="#catalogo" data-quick-filter="category:Retro">Retro</a>
+          <a href="#catalogo" data-quick-filter="category:Running">Running</a>
+          <a href="#como-comprar">Cómo comprar</a>
         </nav>
-        <button id="cartButton" class="cart-button" aria-label="Abrir carrito">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.3 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L20.5 8H7M10 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
-          <span>Mi bolsa</span><b id="cartCount">0</b>
-        </button>
+
+        <div class="header-actions">
+          <button id="searchToggle" class="header-icon-btn" type="button" aria-label="Buscar referencias" aria-expanded="false" aria-controls="headerSearchBar">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </button>
+          <a class="header-icon-btn header-social" href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer" aria-label="Instagram de Mundo de las Tenis">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a class="header-icon-btn header-social social-fb" href="https://www.facebook.com/profile.php?id=61576472572149" target="_blank" rel="noreferrer" aria-label="Facebook de Mundo de las Tenis">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.7 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5H17V3.7c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2H7.5V13h2.8v8h3.4Z" />
+            </svg>
+          </a>
+          <button id="cartButton" class="cart-button" type="button" aria-label="Abrir tu bolsa de compras">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 4h2l2.3 10.1a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 1.9-1.4L20.5 8H7M10 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
+            </svg>
+            <span>Mi bolsa</span>
+            <b id="cartCount">0</b>
+          </button>
+        </div>
+      </div>
+
+      <div id="headerSearchBar" class="header-search-bar" hidden>
+        <div class="header-search-inner">
+          <form id="headerSearchForm" class="header-search-form">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+            <input id="headerSearchInput" type="search" placeholder="Busca por marca, referencia o color (ej. Jordan, Nike TN, Asics, Negro)..." aria-label="Buscar zapatillas" />
+            <button class="header-search-submit" type="submit">Buscar</button>
+          </form>
+          <div class="header-search-chips">
+            <span>Búsquedas rápidas:</span>
+            <button class="search-chip" type="button" data-search-term="Jordan">Jordan</button>
+            <button class="search-chip" type="button" data-search-term="Nike Tn">Nike TN</button>
+            <button class="search-chip" type="button" data-search-term="Asics">Asics</button>
+            <button class="search-chip" type="button" data-search-term="Skechers">Skechers</button>
+            <button class="search-chip" type="button" data-search-term="Louis Vuitton">Louis Vuitton</button>
+            <button class="search-chip" type="button" data-search-term="Cortez">Cortez</button>
+          </div>
+        </div>
       </div>
     </header>
 
+    <aside id="mobileMenu" class="mobile-menu" aria-hidden="true" aria-label="Menú móvil">
+      <div class="mobile-menu-head">
+        <strong>Menú de tienda</strong>
+        <button id="closeMobileMenu" class="icon-button" type="button" aria-label="Cerrar menú">×</button>
+      </div>
+      <nav class="mobile-menu-links" aria-label="Categorías móviles">
+        <a href="#inicio" data-close-mobile>Inicio <span>→</span></a>
+        <a href="#catalogo" data-quick-filter="reset" data-close-mobile class="is-accent">Catálogo completo <span>→</span></a>
+        <a href="#catalogo" data-quick-filter="gender:Hombre" data-close-mobile>Calzado Hombre <span>→</span></a>
+        <a href="#catalogo" data-quick-filter="gender:Mujer" data-close-mobile>Calzado Mujer <span>→</span></a>
+        <a href="#catalogo" data-quick-filter="category:Lifestyle" data-close-mobile>Estilo Lifestyle <span>→</span></a>
+        <a href="#catalogo" data-quick-filter="category:Retro" data-close-mobile>Clásicos Retro <span>→</span></a>
+        <a href="#catalogo" data-quick-filter="category:Running" data-close-mobile>Deportivo / Running <span>→</span></a>
+        <a href="#marcas" data-close-mobile>Nuestras marcas <span>→</span></a>
+        <a href="#como-comprar" data-close-mobile>Cómo comprar <span>→</span></a>
+        <a href="#pagos" data-close-mobile>Métodos de pago <span>→</span></a>
+        <a href="#nosotros" data-close-mobile>Nosotros <span>→</span></a>
+      </nav>
+      <div class="mobile-menu-foot">
+        <a class="btn btn-whatsapp" href="https://wa.me/573217430829" target="_blank" rel="noreferrer">Asesoría por WhatsApp ↗</a>
+        <div class="mobile-menu-social">
+          <a href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://www.facebook.com/profile.php?id=61576472572149" target="_blank" rel="noreferrer">Facebook</a>
+        </div>
+      </div>
+    </aside>
+
     <main>
-      <section class="hero" id="inicio">
-        <div class="hero-copy">
-          <p class="eyebrow">✦ SNEAKERS PARA TU ÓRBITA</p>
-          <h1>Tu estilo<br />no tiene<br /><em>límites.</em></h1>
-          <p class="hero-text">Descubre pares con actitud para llevar tu outfit a otra galaxia. Elige, arma tu pedido y coordina por WhatsApp.</p>
-          <a class="button button-dark" href="#catalogo">Explorar colección <span>↓</span></a>
-          <div class="hero-points"><span>✦ Atención personalizada</span><span>✦ Envíos a toda Colombia</span></div>
+      <!-- HERO SLIDER -->
+      <section class="hero-slider" id="inicio" aria-label="Destacados de colección">
+        <div class="hero-slides">
+          <article class="hero-slide active" data-slide="0">
+            <div class="hero-grid">
+              <div class="hero-copy">
+                <p class="hero-pill"><span></span> Colección 2026 · Envíos a toda Colombia</p>
+                <h1>El par que <em>eleva</em> tu estilo diario.</h1>
+                <p class="hero-lead">
+                  Explora más de 100 referencias seleccionadas en Lifestyle, Retro y Running desde <strong>$ 140.000 COP</strong>. Elige tu talla, arma tu bolsa y confirma tu pedido por WhatsApp.
+                </p>
+                <div class="hero-ctas">
+                  <a class="btn btn-primary" href="#catalogo">Explorar catálogo →</a>
+                  <a class="btn btn-outline-light" href="https://wa.me/573217430829" target="_blank" rel="noreferrer">Hablar con asesor ↗</a>
+                </div>
+                <div class="hero-trust-row">
+                  <div class="hero-trust-item">
+                    <strong>Desde $ 140.000</strong>
+                    Precios claros en COP
+                  </div>
+                  <div class="hero-trust-item">
+                    <strong>Addi y Sistecrédito</strong>
+                    Pregunta al confirmar
+                  </div>
+                  <div class="hero-trust-item">
+                    <strong>Tallas 36 a 45</strong>
+                    Hombre, mujer y unisex
+                  </div>
+                </div>
+              </div>
+
+              <div id="heroShowcase" class="hero-showcase">
+                <button class="hero-card hero-card-main" type="button" data-hero-product="nike-air-ultra-p6000-hombre-negro">
+                  <span class="hero-card-tag">Drop destacado</span>
+                  <img src="imagenes/nike-air-ultra-p6000-hombre-negro.jpg" alt="Nike Air Ultra P6000 negro" />
+                  <div class="hero-card-meta">
+                    <div>
+                      <span>Nike · Lifestyle</span>
+                      <strong>Nike Air Ultra P6000</strong>
+                    </div>
+                    <b class="hero-card-price">$ 150.000</b>
+                  </div>
+                </button>
+                <div class="hero-card-stack">
+                  <button class="hero-card" type="button" data-hero-product="jordan-retro-hombre-azul-blanco-negro-verde-neon">
+                    <img src="imagenes/jordan-retro-hombre-azul-blanco-negro-verde-neon.jpg" alt="Jordan Retro" />
+                    <div class="hero-card-meta">
+                      <div>
+                        <span>Jordan · Retro</span>
+                        <strong>Jordan Retro 5</strong>
+                      </div>
+                      <b class="hero-card-price">$ 140.000</b>
+                    </div>
+                  </button>
+                  <button class="hero-card" type="button" data-hero-product="asics-superblast-hombre-azul-blanco-gris">
+                    <img src="imagenes/asics-superblast-hombre-azul-blanco-gris.jpg" alt="Asics Superblast" />
+                    <div class="hero-card-meta">
+                      <div>
+                        <span>Asics · Running</span>
+                        <strong>Asics Superblast</strong>
+                      </div>
+                      <b class="hero-card-price">$ 160.000</b>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide" data-slide="1">
+            <div class="hero-grid">
+              <div class="hero-copy">
+                <p class="hero-pill"><span></span> Pagos flexibles y asesoría directa</p>
+                <h2>Estrena hoy y paga <em>a tu manera.</em></h2>
+                <p class="hero-lead">
+                  Puedes pagar por transferencia Bancolombia, tarjetas de crédito o consultar financiación con Addi y Sistecrédito directamente al confirmar tu pedido por WhatsApp.
+                </p>
+                <div class="hero-ctas">
+                  <a class="btn btn-primary" href="#pagos">Ver opciones de pago →</a>
+                  <a class="btn btn-outline-light" href="#catalogo">Ver todas las referencias</a>
+                </div>
+                <div class="hero-trust-row">
+                  <div class="hero-trust-item">
+                    <strong>Atención 1 a 1</strong>
+                    Confirmas talla antes de pagar
+                  </div>
+                  <div class="hero-trust-item">
+                    <strong>Cobertura nacional</strong>
+                    Envíos a todo el país
+                  </div>
+                  <div class="hero-trust-item">
+                    <strong>Pago anticipado</strong>
+                    Sin modalidad contraentrega
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-finance-grid">
+                <div class="hero-finance-card">
+                  <div class="hero-finance-logo is-addi">
+                    <img src="imagenes/logo ADDI.png" alt="Logo Addi" />
+                  </div>
+                  <div>
+                    <h3>Compra con Addi</h3>
+                    <p>Consulta la opción de pago por cuotas al confirmar tu par.</p>
+                  </div>
+                </div>
+                <div class="hero-finance-card">
+                  <div class="hero-finance-logo is-sistecredito">
+                    <img src="imagenes/SISTECREDITO LOGO.jpg" alt="Logo Sistecrédito" />
+                  </div>
+                  <div>
+                    <h3>Paga con Sistecrédito</h3>
+                    <p>Pregunta por la disponibilidad de este crédito en WhatsApp.</p>
+                  </div>
+                </div>
+                <div class="hero-finance-card">
+                  <div class="hero-finance-logo is-bancolombia">
+                    <img src="imagenes/Bancolombia Transferencia.jpg" alt="Logo Bancolombia" />
+                  </div>
+                  <div>
+                    <h3>Transferencia Bancolombia</h3>
+                    <p>Confirmación rápida de tu orden y despacho ágil.</p>
+                  </div>
+                </div>
+                <div class="hero-finance-card">
+                  <div class="hero-finance-logo is-card">
+                    <svg width="46" height="34" viewBox="0 0 72 52" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                      <rect x="3" y="4" width="66" height="44" rx="6" />
+                      <path d="M4 18h64M13 34h18M13 40h10" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3>Tarjetas de crédito</h3>
+                    <p>Solicita tu enlace o alternativa al cerrar la compra.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="hero-visual">
-          <img class="hero-cosmos" src="imagenes/Logo.jpeg" alt="" aria-hidden="true" />
-          <p class="vertical-text">MUNDO DE LAS TENIS — COLOMBIA</p>
-          <div class="hero-sticker">NUEVOS<br /><b>DROPS</b><br />CADA SEMANA</div>
-          <img class="hero-shoe" src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1200&q=90" alt="Zapatilla deportiva blanca" />
-          <div class="hero-number">01</div>
+
+        <div class="hero-controls">
+          <div class="hero-controls-inner">
+            <button id="heroPrev" class="slider-arrow" type="button" aria-label="Diapositiva anterior">‹</button>
+            <div class="slider-dots" role="tablist" aria-label="Seleccionar diapositiva">
+              <button class="slider-dot active" type="button" data-slide-to="0" aria-label="Slide 1"></button>
+              <button class="slider-dot" type="button" data-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <button id="heroNext" class="slider-arrow" type="button" aria-label="Siguiente diapositiva">›</button>
+          </div>
         </div>
       </section>
 
-      <section class="marquee" aria-label="Beneficios">
-        <div><span>SISTECREDITO DISPONIBLE</span><i>✦</i><span>ENVÍOS NACIONALES</span><i>✦</i><span>COMPRA POR WHATSAPP</span><i>✦</i><span>ADDI DISPONIBLE</span><i>✦</i><span>SISTECREDITO DISPONIBLE</span><i>✦</i><span>ENVÍOS NACIONALES</span><i>✦</i></div>
+      <!-- CATEGORY QUICK-FILTER STRIP -->
+      <section class="category-strip" aria-label="Categorías principales">
+        <div class="container">
+          <div class="category-grid">
+            <button class="category-tile" type="button" data-quick-filter="gender:Hombre">
+              <div class="category-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 64 42">
+                  <path d="M8 29h44c3 0 5-2 5-4.5 0-2.7-2.2-4.6-6-5.2l-10-1.6-8.5-9.2c-1.1-1.2-2.9-1-3.8.4l-3.7 5.6c-2.6 3.7-6.6 5.9-12 6.8L8 22.3c-2.2.4-3.5 1.9-3.5 3.7 0 1.7 1.4 3 3.5 3Z" />
+                  <path d="M5 33h51" />
+                </svg>
+              </div>
+              <strong>Calzado Hombre</strong>
+              <span>Tallas 40 a 45</span>
+            </button>
+
+            <button class="category-tile" type="button" data-quick-filter="gender:Mujer">
+              <div class="category-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 64 42">
+                  <path d="M9 29h42c3 0 5-1.9 5-4.3 0-2.5-2-4.3-5.6-4.9l-9.2-1.5-8.2-8.8c-1.1-1.1-2.8-.9-3.6.4l-3.4 5.2c-2.5 3.6-6.3 5.6-11.2 6.4l-5.2.9C7.3 22.8 6 24.3 6 26c0 1.7 1.3 3 3 3Z" />
+                  <path d="M7 33h48M27 16l6 4" />
+                </svg>
+              </div>
+              <strong>Calzado Mujer</strong>
+              <span>Tallas 36 a 40</span>
+            </button>
+
+            <button class="category-tile" type="button" data-quick-filter="category:Lifestyle">
+              <div class="category-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 64 42">
+                  <path d="M7 29h46c2.5 0 4.5-1.8 4.5-4.2 0-2.4-1.8-4.2-5.2-4.8l-11-1.8-7.8-7.7c-1.1-1.1-2.9-.8-3.7.5L26 16c-2.4 3.4-6.4 5.2-12.5 6.2l-5.5.9C6 23.5 5 25 5 26.6 5 28 6 29 7 29Z" />
+                  <path d="M15 26h30" />
+                </svg>
+              </div>
+              <strong>Lifestyle</strong>
+              <span>Estilo urbano diario</span>
+            </button>
+
+            <button class="category-tile" type="button" data-quick-filter="category:Retro">
+              <div class="category-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 64 42">
+                  <path d="M8 31h45c2.6 0 4.5-1.8 4.5-4.2 0-2.6-2-4.4-5.5-5l-9.5-1.4-4-11.4c-.7-1.9-2.8-2.6-4.4-1.4l-6.4 4.8c-3.5 2.6-7.7 4.4-13.2 5.4l-5.5 1C7 19.3 5.5 21 5.5 23v4c0 2.2 1.1 4 2.5 4Z" />
+                  <path d="M22 14l9 6M6 34h50" />
+                </svg>
+              </div>
+              <strong>Retro</strong>
+              <span>Siluetas clásicas</span>
+            </button>
+
+            <button class="category-tile" type="button" data-quick-filter="category:Running">
+              <div class="category-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 64 42">
+                  <path d="M8 29c8 0 18 2 28 2h15c3.2 0 5.5-2 5.5-4.8 0-2.8-2.3-4.7-6.2-5.1l-11-1.3-8.5-9.2c-1-1.1-2.8-.9-3.6.4l-3.6 5.6c-2.5 3.6-6.7 5.7-12.6 6.4l-3.5.4C5.5 23.7 4.5 25 4.5 26.5 4.5 28 6 29 8 29Z" />
+                  <path d="M12 33c10 0 18 1.5 29 1.5h12" />
+                </svg>
+              </div>
+              <strong>Running</strong>
+              <span>Amortiguación y sport</span>
+            </button>
+          </div>
+        </div>
       </section>
 
+      <!-- FEATURED CAROUSEL (DARK CONTRAST BLOCK) -->
+      <section class="featured-section" aria-label="Referencias destacadas">
+        <div class="container">
+          <div class="featured-head">
+            <div>
+              <p class="section-kicker">Selección destacada</p>
+              <h2>¡Los más buscados!</h2>
+            </div>
+            <div class="featured-head-actions">
+              <button id="featuredPrev" class="carousel-btn" type="button" aria-label="Anterior destacado">‹</button>
+              <button id="featuredNext" class="carousel-btn" type="button" aria-label="Siguiente destacado">›</button>
+            </div>
+          </div>
+
+          <div id="featuredTrack" class="featured-track"></div>
+
+          <div class="featured-footer">
+            <button class="featured-view-all" type="button" data-quick-filter="reset">Ver todo el catálogo ↓</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- BRANDS STRIP -->
+      <section class="brands-section" id="marcas" aria-label="Nuestras marcas">
+        <div class="container">
+          <div class="brands-head">
+            <h2>Nuestras marcas</h2>
+            <p>Haz clic en una marca para filtrar el catálogo al instante</p>
+          </div>
+          <div id="brandsGrid" class="brands-grid"></div>
+        </div>
+      </section>
+
+      <!-- FULL INTERACTIVE CATALOG -->
       <section class="catalog-section" id="catalogo">
-        <div class="section-heading">
-          <div><p class="eyebrow">COLECCIÓN EN ÓRBITA</p><h2>Últimos <em>drops.</em></h2></div>
-          <p id="productTotal" class="product-total">Cargando catálogo...</p>
+        <div class="container">
+          <div class="catalog-header">
+            <div>
+              <p class="section-kicker">Catálogo completo</p>
+              <h2>Últimos drops y referencias.</h2>
+            </div>
+            <p id="productTotal" class="product-total">Cargando catálogo...</p>
+          </div>
+
+          <div class="catalog-toolbar">
+            <div class="toolbar-row">
+              <div class="filter-group" aria-label="Filtros por género y categoría">
+                <div id="genderFilters" class="filter-group"></div>
+                <span class="filter-divider" aria-hidden="true"></span>
+                <div id="categoryFilters" class="filter-group"></div>
+              </div>
+
+              <label class="search-box">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m20 20-3.5-3.5" />
+                </svg>
+                <input id="searchInput" type="search" placeholder="Buscar modelo, marca o color..." aria-label="Buscar referencias" />
+              </label>
+            </div>
+
+            <div class="toolbar-row">
+              <div class="toolbar-selects">
+                <label class="select-wrap">
+                  Marca
+                  <select id="brandSelect" aria-label="Filtrar por marca">
+                    <option value="Todas">Todas</option>
+                  </select>
+                </label>
+                <label class="select-wrap">
+                  Talla EUR
+                  <select id="sizeSelect" aria-label="Filtrar por talla">
+                    <option value="Todas">Todas</option>
+                  </select>
+                </label>
+                <label class="select-wrap">
+                  Ordenar
+                  <select id="sortSelect" aria-label="Ordenar catálogo">
+                    <option value="recent">Más recientes</option>
+                    <option value="price-asc">Menor precio</option>
+                    <option value="price-desc">Mayor precio</option>
+                    <option value="name">Nombre A–Z</option>
+                  </select>
+                </label>
+              </div>
+              <button id="clearFilters" class="clear-filters-btn" type="button" hidden>Limpiar filtros ×</button>
+            </div>
+          </div>
+
+          <div id="catalogMessage" class="catalog-message" hidden></div>
+          <div id="productGrid" class="product-grid"></div>
+
+          <div id="catalogPagination" class="catalog-pagination" hidden>
+            <p id="paginationStatus" class="pagination-status"></p>
+            <div class="pagination-bar" aria-hidden="true">
+              <div id="paginationFill" class="pagination-bar-fill"></div>
+            </div>
+            <div class="pagination-actions">
+              <button id="loadMoreBtn" class="btn btn-dark" type="button">Cargar más referencias</button>
+              <button id="showAllBtn" class="btn btn-outline-dark" type="button">Ver todas</button>
+            </div>
+          </div>
         </div>
-        <div class="catalog-toolbar">
-          <div id="filters" class="filters" aria-label="Filtros de categoría"></div>
-          <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar referencias" aria-label="Buscar referencias" /></label>
-        </div>
-        <div id="catalogMessage" class="catalog-message" hidden></div>
-        <div id="productGrid" class="product-grid"></div>
       </section>
 
-      <section class="story-section" id="nosotros">
-        <div class="story-image"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85" alt="Tenis rojos sobre fondo colorido" /><span>DESDE<br />COLOMBIA</span></div>
-        <div class="story-copy"><p class="eyebrow">MÁS QUE UNA TIENDA</p><h2>Diseñadas para<br /><em>destacar.</em></h2><p>En Mundo de las Tenis creemos que un buen par cambia por completo tu energía. Seleccionamos referencias con comodidad, presencia y ese detalle que se queda en la cabeza.</p><a href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer" class="text-link">Conócenos en Instagram <span>↗</span></a></div>
-      </section>
-
+      <!-- HOW TO BUY + TRUST HIGHLIGHTS -->
       <section class="purchase-section" id="como-comprar">
-        <div class="purchase-title"><p class="eyebrow">ASÍ DE FÁCIL</p><h2>Tu nuevo par<br />está a <em>un chat.</em></h2></div>
-        <ol class="steps"><li><span>01</span><h3>Elige</h3><p>Explora el catálogo y selecciona tu talla.</p></li><li><span>02</span><h3>Agrega</h3><p>Arma tu bolsa con todos tus favoritos.</p></li><li><span>03</span><h3>Escríbenos</h3><p>Envía el pedido directamente por WhatsApp.</p></li><li><span>04</span><h3>Recibe</h3><p>Coordinamos pago y envío contigo.</p></li></ol>
+        <div class="container">
+          <div class="section-center-head">
+            <p class="section-kicker">Proceso rápido</p>
+            <h2>Tu nuevo par está a un chat.</h2>
+            <p>Sin formularios largos ni registros complicados: armas tu bolsa y confirmamos disponibilidad contigo por WhatsApp.</p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <span class="step-num">01</span>
+              <h3>Elige tu referencia</h3>
+              <p>Filtra por género, marca, categoría o talla EUR para encontrar el par ideal.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-num">02</span>
+              <h3>Selecciona talla</h3>
+              <p>Consulta la guía de tallas (CO, US, EUR y CM) y agrega tus favoritos a la bolsa.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-num">03</span>
+              <h3>Confirma por WhatsApp</h3>
+              <p>Envía tu pedido con 1 clic, confirmamos stock real, envío y el medio de pago que prefieras.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-num">04</span>
+              <h3>Recibe en tu ciudad</h3>
+              <p>Despachamos a cualquier ciudad de Colombia con seguimiento directo de tu envío.</p>
+            </article>
+          </div>
+
+          <div class="trust-strip" aria-label="Beneficios de compra">
+            <div class="trust-item">
+              <div class="trust-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 7h12v10H3zM15 10h4l2 3v4h-6z" /><circle cx="7.5" cy="18" r="2" /><circle cx="17.5" cy="18" r="2" /></svg>
+              </div>
+              <div>
+                <strong>Envíos a toda Colombia</strong>
+                <span>Coordinación rápida y segura a tu ciudad.</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 20l1.2-4.8A8.4 8.4 0 1 1 21 11.5Z" /></svg>
+              </div>
+              <div>
+                <strong>Asesoría 1 a 1</strong>
+                <span>Verificamos tu talla antes de cerrar la compra.</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20" /></svg>
+              </div>
+              <div>
+                <strong>Opciones de crédito</strong>
+                <span>Pregunta por Addi y Sistecrédito al pedir.</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="m9 12 2 2 4-4" /><circle cx="12" cy="12" r="9" /></svg>
+              </div>
+              <div>
+                <strong>Catálogo actualizado</strong>
+                <span>Nuevas referencias agregadas continuamente.</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="payments-section">
-        <div class="payment-heading">
-          <p class="eyebrow">PAGA A TU MANERA</p>
-          <h2>Opciones que<br /><em>se adaptan a ti.</em></h2>
-          <p>Elige el método que prefieras y terminamos de confirmar tu pedido por WhatsApp.</p>
+      <!-- PAYMENT OPTIONS -->
+      <section class="payments-section" id="pagos">
+        <div class="container">
+          <div class="section-center-head">
+            <p class="section-kicker">Paga a tu manera</p>
+            <h2>Opciones de pago disponibles.</h2>
+            <p>Elige el método que prefieras y terminamos de confirmar tu pedido directamente por WhatsApp.</p>
+          </div>
+
+          <div class="payment-methods" aria-label="Métodos de pago disponibles">
+            <article class="payment-card">
+              <div class="payment-card-top"><span>01</span><span class="payment-status">Disponible</span></div>
+              <div class="payment-logo-stage stage-bancolombia">
+                <img src="imagenes/Bancolombia Transferencia.jpg" alt="Transferencia Bancolombia" />
+              </div>
+              <h3>Transferencia Bancolombia</h3>
+              <p>Coordinamos los datos y confirmamos tu pago directamente por WhatsApp.</p>
+            </article>
+
+            <article class="payment-card">
+              <div class="payment-card-top"><span>02</span><span class="payment-status">Disponible</span></div>
+              <div class="payment-logo-stage stage-card" aria-hidden="true">
+                <svg viewBox="0 0 72 52">
+                  <rect x="3" y="4" width="66" height="44" rx="6" />
+                  <path d="M4 18h64M13 34h18M13 40h10" />
+                  <circle cx="55" cy="35" r="7" />
+                  <circle cx="61" cy="35" r="7" />
+                </svg>
+              </div>
+              <h3>Tarjetas de crédito</h3>
+              <p>Consulta por esta alternativa cuando confirmes tu pedido por WhatsApp.</p>
+            </article>
+
+            <article class="payment-card">
+              <div class="payment-card-top"><span>03</span><span class="payment-status">Disponible</span></div>
+              <div class="payment-logo-stage stage-addi">
+                <img src="imagenes/logo ADDI.png" alt="Addi" />
+              </div>
+              <h3>Compra con Addi</h3>
+              <p>Pregunta por esta alternativa al momento de confirmar tu pedido.</p>
+            </article>
+
+            <article class="payment-card">
+              <div class="payment-card-top"><span>04</span><span class="payment-status">Disponible</span></div>
+              <div class="payment-logo-stage stage-sistecredito">
+                <img src="imagenes/SISTECREDITO LOGO.jpg" alt="Sistecrédito" />
+              </div>
+              <h3>Paga con Sistecrédito</h3>
+              <p>Consulta la disponibilidad de este medio cuando armes tu pedido.</p>
+            </article>
+          </div>
+
+          <p class="payment-note">✦ Importante: Por ahora no manejamos pago contraentrega.</p>
         </div>
-        <div class="payment-methods" aria-label="Métodos de pago disponibles">
-          <article class="payment-card payment-transfer">
-            <div class="payment-card-top"><span>01</span><span>Disponible</span></div>
-            <div class="payment-logo-wrap payment-bancolombia"><img src="imagenes/Bancolombia Transferencia.jpg" alt="Transferencia Bancolombia" /></div>
-            <h3>Transferencia Bancolombia</h3>
-            <p>Coordinamos los datos y confirmamos tu pago directamente por WhatsApp.</p>
-          </article>
-          <article class="payment-card payment-credit-card">
-            <div class="payment-card-top"><span>02</span><span>Disponible</span></div>
-            <div class="payment-credit-mark" aria-hidden="true"><svg viewBox="0 0 72 52"><rect x="3" y="4" width="66" height="44" rx="6"/><path d="M4 18h64"/><path d="M13 34h18M13 40h10"/><circle cx="55" cy="35" r="7"/><circle cx="61" cy="35" r="7"/></svg><span>CRÉDITO</span></div>
-            <h3>Tarjetas de crédito</h3>
-            <p>Consulta por esta alternativa cuando confirmes tu pedido por WhatsApp.</p>
-          </article>
-          <article class="payment-card payment-brand payment-addi">
-            <div class="payment-card-top"><span>03</span><span>Disponible</span></div>
-            <div class="payment-logo-wrap"><img src="imagenes/logo ADDI.png" alt="Addi" /></div>
-            <h3>Compra con Addi</h3>
-            <p>Pregunta por esta alternativa al momento de confirmar tu pedido.</p>
-          </article>
-          <article class="payment-card payment-brand payment-sistecredito">
-            <div class="payment-card-top"><span>04</span><span>Disponible</span></div>
-            <div class="payment-logo-wrap"><img src="imagenes/SISTECREDITO LOGO.jpg" alt="Sistecrédito" /></div>
-            <h3>Paga con Sistecrédito</h3>
-            <p>Consulta la disponibilidad de este medio cuando armes tu pedido.</p>
-          </article>
+      </section>
+
+      <!-- STORY / ABOUT US -->
+      <section class="story-section" id="nosotros">
+        <div class="container">
+          <div class="story-grid">
+            <div class="story-media">
+              <img src="imagenes/jordan-retro-hombre-azul-blanco-negro-verde-neon.jpg" alt="Zapatillas Jordan Retro en Mundo de las Tenis" />
+              <span class="story-media-badge">Colombia · Venta Online</span>
+            </div>
+            <div class="story-copy">
+              <p class="section-kicker">Sobre nosotros</p>
+              <h2>Diseñadas para destacar en cada paso.</h2>
+              <p>
+                En Mundo de las Tenis creemos que un buen par cambia por completo tu outfit. Seleccionamos referencias urbanas, retro y deportivas con presencia, comodidad y precios claros.
+              </p>
+              <p>
+                Atendemos directamente por WhatsApp para asesorarte con la talla exacta, mostrarte disponibilidad real y acompañarte desde que eliges tus tenis hasta que llegan a tu puerta.
+              </p>
+              <div class="story-actions">
+                <a class="btn btn-primary" href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer">Síguenos en Instagram ↗</a>
+                <a class="btn btn-outline-light" href="https://wa.me/573217430829" target="_blank" rel="noreferrer">Escríbenos por WhatsApp</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <p class="payment-note"><span>✦</span> Por ahora no manejamos pago contraentrega.</p>
       </section>
     </main>
 
-    <footer>
-      <a class="brand footer-brand" href="#inicio"><img class="brand-logo" src="imagenes/Logo.jpeg" alt="" /><span class="brand-name">MUNDO<br />DE LAS <i>TENIS</i></span></a>
-      <div><p>¿Tienes dudas? Escríbenos.</p><a href="https://wa.me/573217430829" target="_blank" rel="noreferrer" class="footer-contact">+57 321 743 0829 ↗</a></div>
-      <div><p>Síguenos para ver nuevos lanzamientos.</p><a href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer" class="footer-contact">@MUNDODELASTENIS ↗</a></div>
-      <nav class="footer-legal" aria-label="Información legal">
-        <p>Información legal</p>
-        <a href="politica-de-privacidad/">Política de privacidad</a>
-        <a href="terminos-y-condiciones/">Términos y condiciones</a>
-        <a href="eliminacion-de-datos/">Eliminación de datos</a>
-      </nav>
-      <p class="copyright">© 2026 MUNDO DE LAS TENIS</p>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a class="brand" href="#inicio">
+              <img class="brand-logo" src="imagenes/Logo.jpeg" alt="" />
+              <span class="brand-name">MUNDO<br />DE LAS <i>TENIS</i></span>
+            </a>
+            <p>Tu tienda virtual de sneakers en Colombia. Selecciona tu talla y coordina pago y envío directo por WhatsApp.</p>
+          </div>
+
+          <div class="footer-col">
+            <h3>Categorías</h3>
+            <div class="footer-links">
+              <a href="#catalogo" data-quick-filter="reset">Todo el catálogo</a>
+              <a href="#catalogo" data-quick-filter="gender:Hombre">Calzado Hombre</a>
+              <a href="#catalogo" data-quick-filter="gender:Mujer">Calzado Mujer</a>
+              <a href="#catalogo" data-quick-filter="category:Lifestyle">Lifestyle</a>
+              <a href="#catalogo" data-quick-filter="category:Retro">Retro</a>
+              <a href="#catalogo" data-quick-filter="category:Running">Running</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contacto y redes</h3>
+            <div class="footer-links">
+              <a href="https://wa.me/573217430829" target="_blank" rel="noreferrer">WhatsApp: +57 321 743 0829 ↗</a>
+              <a href="https://instagram.com/mundodelastenis" target="_blank" rel="noreferrer">@mundodelastenis ↗</a>
+              <a href="https://www.facebook.com/profile.php?id=61576472572149" target="_blank" rel="noreferrer">Facebook oficial ↗</a>
+              <a href="#como-comprar">Cómo comprar</a>
+              <a href="#pagos">Métodos de pago</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Información legal</h3>
+            <nav class="footer-links" aria-label="Información legal">
+              <a href="politica-de-privacidad/">Política de privacidad</a>
+              <a href="terminos-y-condiciones/">Términos y condiciones</a>
+              <a href="eliminacion-de-datos/">Eliminación de datos</a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 MUNDO DE LAS TENIS — COLOMBIA</span>
+          <span>Envíos nacionales · Sin pago contraentrega</span>
+        </div>
+      </div>
     </footer>
 
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/573217430829?text=%C2%A1Hola!%20Quiero%20asesor%C3%ADa%20sobre%20un%20par%20de%20tenis."
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Chatear por WhatsApp con Mundo de las Tenis"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.5-.2-1.1-.4-1.9-.7-3.3-1.4-5.4-4.8-5.6-5-.2-.2-1.3-1.8-1.3-3.4s.8-2.4 1.1-2.7c.3-.3.7-.4.9-.4h.7c.2 0 .5-.1.8.6.3.7 1 2.4 1.1 2.6.1.2.1.4 0 .6-.1.2-.2.4-.4.6l-.6.7c-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.8 1.7 3.2 1.9.4.2.6.1.8-.1l.9-1.1c.2-.3.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.4.1.2.1.8-.1 1.5Z" />
+      </svg>
+      <span>¿Dudas? Escríbenos</span>
+    </a>
+
+    <!-- CART DRAWER -->
     <aside id="cartPanel" class="cart-panel" aria-hidden="true" aria-label="Tu bolsa de compras">
-      <div class="cart-head"><h2>Tu <em>bolsa.</em></h2><button id="closeCart" class="icon-button" aria-label="Cerrar carrito">×</button></div>
+      <div class="cart-head">
+        <h2>Tu bolsa</h2>
+        <button id="closeCart" class="icon-button" type="button" aria-label="Cerrar bolsa">×</button>
+      </div>
+      <div class="cart-banner">✦ Envíos nacionales · Confirmamos disponibilidad por WhatsApp</div>
       <div id="cartItems" class="cart-items"></div>
-      <div id="cartEmpty" class="cart-empty"><span>⌑</span><p>Tu bolsa está vacía.</p><button id="exploreButton" class="text-link">Explorar catálogo <b>↓</b></button></div>
-      <div id="cartSummary" class="cart-summary" hidden><div><span>Subtotal</span><strong id="cartSubtotal">$0</strong></div><small>El valor del envío se confirma por WhatsApp.</small><button id="whatsappOrder" class="button button-whatsapp">Finalizar pedido por WhatsApp <span>↗</span></button><p>Al continuar, te redirigiremos a WhatsApp con el resumen de tu pedido.</p></div>
+      <div id="cartEmpty" class="cart-empty">
+        <div class="cart-empty-icon" aria-hidden="true">👟</div>
+        <p>Tu bolsa está vacía por ahora.</p>
+        <button id="exploreButton" class="btn btn-dark" type="button">Explorar catálogo ↓</button>
+      </div>
+      <div id="cartSummary" class="cart-summary" hidden>
+        <div class="cart-subtotal-row">
+          <span>Subtotal</span>
+          <strong id="cartSubtotal">$ 0</strong>
+        </div>
+        <small>El valor del envío y medio de pago se confirman por WhatsApp.</small>
+        <button id="whatsappOrder" class="btn btn-whatsapp" type="button">Finalizar pedido por WhatsApp ↗</button>
+        <p class="cart-summary-note">Te llevaremos a WhatsApp con el resumen de tus referencias.</p>
+      </div>
     </aside>
+
     <div id="overlay" class="overlay" hidden></div>
-    <dialog id="productDialog" class="product-dialog"><button id="closeDialog" class="icon-button dialog-close" aria-label="Cerrar">×</button><div id="dialogContent"></div></dialog>
-    <template id="productTemplate"><article class="product-card"><button class="product-image" type="button"><img loading="lazy" /><span class="product-badge" hidden></span><span class="quick-view">Ver detalles <b>↗</b></span></button><div class="product-info"><div><p class="product-category"></p><h3></h3></div><strong></strong></div></article></template>
+
+    <!-- PRODUCT BUY-BOX DIALOG -->
+    <dialog id="productDialog" class="product-dialog">
+      <button id="closeDialog" class="icon-button dialog-close" type="button" aria-label="Cerrar detalle">×</button>
+      <div id="dialogContent"></div>
+    </dialog>
+
+    <!-- PRODUCT CARD TEMPLATE -->
+    <template id="productTemplate">
+      <article class="product-card">
+        <button class="product-media" type="button">
+          <img loading="lazy" />
+          <div class="product-badges">
+            <span class="badge-drop" hidden>Nuevo</span>
+            <span class="badge-gender"></span>
+          </div>
+        </button>
+        <div class="product-body">
+          <p class="product-kicker"></p>
+          <h3 class="product-title"></h3>
+          <p class="product-colorway"></p>
+          <div class="product-foot">
+            <div class="product-price-wrap">
+              <strong class="product-price"></strong>
+              <span class="product-sizes-hint"></span>
+            </div>
+            <button class="product-cta" type="button">Elegir talla</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
     <script src="app.js"></script>
   </body>
 </html>
