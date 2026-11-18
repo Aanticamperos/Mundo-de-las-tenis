@@ -74,6 +74,46 @@ a {
   margin-inline: auto;
 }
 
+.preview-mode-banner {
+  background: #14151b;
+  color: #f7f8fa;
+  border-bottom: 2px solid var(--accent);
+  padding: 10px 18px;
+  font-size: 12.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.preview-mode-banner code {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'DM Mono', monospace;
+}
+
+.preview-mode-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.preview-mode-actions a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.preview-mode-actions a:first-child {
+  background: var(--accent);
+  color: #ffffff;
+}
+
 /* =========================================
    ANNOUNCEMENT MARQUEE BAR
    ========================================= */
@@ -794,6 +834,25 @@ a {
   color: var(--ink);
 }
 
+.hero-card-price-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.hero-card-price-old {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  text-decoration: line-through;
+  line-height: 1;
+}
+
+.hero-card-price-old[hidden] {
+  display: none;
+}
+
 .hero-card-price {
   background: var(--dark);
   color: #ffffff;
@@ -802,6 +861,29 @@ a {
   padding: 5px 9px;
   border-radius: 6px;
   white-space: nowrap;
+}
+
+.hero-card-price.is-discounted {
+  background: var(--accent);
+}
+
+.hero-card-discount {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(247, 58, 0, 0.3);
+}
+
+.hero-card-discount[hidden] {
+  display: none;
 }
 
 .hero-card-tag {
@@ -1380,10 +1462,29 @@ a {
   left: 10px;
   right: 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 6px;
   pointer-events: none;
+}
+
+.product-badges-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.badge-discount {
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(247, 58, 0, 0.28);
 }
 
 .badge-drop {
@@ -1395,6 +1496,15 @@ a {
   text-transform: uppercase;
   padding: 4px 8px;
   border-radius: 6px;
+}
+
+.product-card.has-discount .badge-drop {
+  background: rgba(10, 10, 13, 0.82);
+}
+
+.badge-discount[hidden],
+.badge-drop[hidden] {
+  display: none;
 }
 
 .badge-gender {
@@ -1450,6 +1560,14 @@ a {
 .product-price-wrap {
   display: flex;
   flex-direction: column;
+  gap: 2px;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .product-price {
@@ -1457,6 +1575,22 @@ a {
   font-weight: 800;
   color: var(--ink);
   line-height: 1.1;
+}
+
+.product-price.is-discounted {
+  color: var(--accent);
+}
+
+.product-price-old {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  text-decoration: line-through;
+  line-height: 1.1;
+}
+
+.product-price-old[hidden] {
+  display: none;
 }
 
 .product-sizes-hint {
@@ -2220,6 +2354,30 @@ a {
   color: var(--ink);
 }
 
+.dialog-price.is-discounted {
+  color: var(--accent);
+}
+
+.dialog-price-old {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-decoration: line-through;
+}
+
+.dialog-discount-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 4px 9px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .dialog-shipping-pill {
   background: var(--accent-soft);
   color: var(--accent);
@@ -2600,6 +2758,10 @@ a {
 
   .product-price {
     font-size: 14px;
+  }
+
+  .product-price-old {
+    font-size: 11px;
   }
 
   .product-foot {

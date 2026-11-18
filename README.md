@@ -28,3 +28,13 @@ La tienda incluye estas rutas estáticas:
 Antes de publicarlas como versión jurídica definitiva, completa en `legal-config.js` los campos `legalResponsibleName` y `contactEmail` con la razón social o nombre completo del responsable del tratamiento y el correo para consultas de protección de datos. No se agregaron esos datos porque no estaban presentes en el proyecto. El WhatsApp comercial ya confirmado está centralizado en ese mismo archivo.
 
 Al publicar en GitHub Pages, Netlify, Vercel u otro hosting estático, conserva las carpetas de estas rutas y sus archivos `index.html`; así funcionarán tanto desde el footer como al abrir cada URL directamente.
+
+## Administrar precios y descuentos por zapatilla
+
+La tienda incluye el apartado privado `/gestion-descuentos/` protegido con token de GitHub para ajustar el precio base o activar descuentos por referencia sin modificar la estructura de `catalogo.csv`:
+
+1. Entra a `/gestion-descuentos/` e ingresa un **Fine-grained personal access token** de GitHub con permiso **Contents: Read and write** sobre `Aanticamperos/Mundo-de-las-tenis`.
+2. Busca la zapatilla y ajusta su **Precio normal**, el **% de descuento** o el **Precio con descuento**.
+3. Pulsa **Vista previa** para comprobar cómo queda en la tienda.
+4. Pulsa **Publicar en la tienda** para actualizar `descuentos.json` directamente en GitHub (o descárgalo manualmente si lo prefieres).
+

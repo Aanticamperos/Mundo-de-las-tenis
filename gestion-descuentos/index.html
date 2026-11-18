@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es-CO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0d" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <title>Gestor de precios y descuentos | Mundo de las Tenis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Oswald:wght@600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body class="admin-page">
+    <header class="site-header admin-header">
+      <div class="header-inner">
+        <div class="admin-brand-wrap">
+          <a class="brand" href="../" aria-label="Mundo de las Tenis, tienda">
+            <img class="brand-logo" src="../imagenes/Logo.jpeg" alt="" />
+            <span class="brand-name">MUNDO<br />DE LAS <i>TENIS</i></span>
+          </a>
+          <span class="admin-route-tag">Panel de precios</span>
+        </div>
+
+        <div class="admin-header-actions">
+          <a class="btn btn-outline-light" href="../">Ir a la tienda ↗</a>
+          <div id="adminAuthActions" class="admin-header-actions" hidden>
+            <button id="previewStoreBtn" class="btn btn-outline-light" type="button">Vista previa</button>
+            <button id="publishStoreBtn" class="btn btn-primary" type="button">Publicar en la tienda</button>
+            <button id="logoutBtn" class="btn btn-outline-light" type="button">Salir</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="adminAuthGate" class="auth-gate" aria-labelledby="authTitle">
+      <div class="container">
+        <div class="auth-card">
+          <p class="section-kicker">Acceso privado · Aanticamperos/Mundo-de-las-tenis</p>
+          <h1 id="authTitle">Ingresa con tu token de <em>GitHub.</em></h1>
+          <p class="auth-lead">
+            Solo las cuentas con permiso de edición en este repositorio pueden abrir el gestor y publicar cambios en la tienda.
+          </p>
+
+          <form id="authForm" class="auth-form">
+            <label class="auth-label" for="githubTokenInput">Token personal de GitHub</label>
+            <div class="auth-token-box">
+              <input
+                id="githubTokenInput"
+                type="password"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="github_pat_... o ghp_..."
+                required
+              />
+              <button id="toggleTokenVisibility" class="auth-toggle-btn" type="button">Mostrar</button>
+            </div>
+
+            <label class="auth-remember">
+              <input id="rememberTokenCheck" type="checkbox" />
+              <span>Recordar token en este navegador (solo en tu dispositivo personal)</span>
+            </label>
+
+            <p id="authError" class="auth-error" role="alert" hidden></p>
+
+            <button id="authSubmitBtn" class="btn btn-primary auth-submit-btn" type="submit">
+              Verificar y entrar →
+            </button>
+          </form>
+
+          <details class="auth-guide" open>
+            <summary>¿Cómo obtengo mi token? (No llega al correo, se crea una vez en GitHub)</summary>
+            <ol>
+              <li>
+                Entra con tu cuenta de GitHub a
+                <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noreferrer">
+                  Configuración de tokens ↗
+                </a>.
+              </li>
+              <li>En <strong>Repository access</strong>, elige <strong>Only select repositories</strong> y selecciona <code>Mundo-de-las-tenis</code>.</li>
+              <li>En <strong>Permissions → Repository permissions</strong>, pon <strong>Contents</strong> en <strong>Read and write</strong>.</li>
+              <li>Pulsa <strong>Generate token</strong>, cópialo en un lugar seguro y pégalo arriba.</li>
+            </ol>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <main id="adminMain" class="admin-main" hidden>
+      <section class="admin-intro-band">
+        <div class="container admin-intro-grid">
+          <div>
+            <p class="section-kicker">Administración por referencia</p>
+            <h2>Ajusta precios y descuentos <em>zapatilla por zapatilla.</em></h2>
+            <p class="admin-lead">
+              Sesión verificada en GitHub como <strong id="authUserDisplay">Aanticamperos</strong>. Configura precios base u ofertas reales en pares específicos y publícalos en un clic.
+            </p>
+          </div>
+
+          <ol class="admin-steps" aria-label="Cómo publicar tus descuentos">
+            <li>
+              <strong>1. Ajusta cada par</strong>
+              <span>Edita el <b>Precio normal</b> y el <b>% de descuento</b> o <b>Precio final</b> en cada zapatilla.</span>
+            </li>
+            <li>
+              <strong>2. Revisa en vivo</strong>
+              <span>Usa <b>Vista previa</b> arriba para comprobar las tarjetas, el carrito y WhatsApp.</span>
+            </li>
+            <li>
+              <strong>3. Publica en 1 clic</strong>
+              <span>Pulsa <b>Publicar en la tienda</b>; actualiza <code>descuentos.json</code> directo en GitHub (tarda ~1 min en reflejarse).</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="admin-workspace">
+        <div class="container">
+          <div class="admin-stats-bar" aria-live="polite">
+            <div class="admin-stat-group">
+              <div class="admin-stat">
+                <strong id="statTotal">0</strong>
+                <span>Referencias totales</span>
+              </div>
+              <div class="admin-stat is-accent">
+                <strong id="statDiscounted">0</strong>
+                <span>Con descuento activo</span>
+              </div>
+              <div class="admin-stat">
+                <strong id="statAdjusted">0</strong>
+                <span>Precio base ajustado</span>
+              </div>
+            </div>
+
+            <div class="admin-file-actions">
+              <button id="downloadJsonBtn" class="admin-text-btn" type="button">Descargar descuentos.json</button>
+              <button id="importJsonBtn" class="admin-text-btn" type="button">Importar JSON</button>
+              <input id="importJsonInput" type="file" accept=".json,application/json" hidden />
+              <button id="restorePublishedBtn" class="admin-text-btn" type="button">Restaurar publicados</button>
+              <button id="clearAllBtn" class="admin-text-btn is-danger" type="button">Limpiar todos los cambios</button>
+            </div>
+          </div>
+
+          <div class="admin-toolbar">
+            <div class="admin-search-wrap">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-3.5-3.5" />
+              </svg>
+              <input
+                id="adminSearchInput"
+                type="search"
+                placeholder="Buscar por modelo, marca, color o ID..."
+                aria-label="Buscar zapatillas para editar descuento"
+              />
+            </div>
+
+            <label class="admin-select-wrap">
+              <span>Marca</span>
+              <select id="adminBrandSelect">
+                <option value="Todas">Todas</option>
+              </select>
+            </label>
+
+            <div id="adminStatusFilters" class="admin-status-pills" role="group" aria-label="Filtrar por estado de precio">
+              <button class="filter-pill active" type="button" data-status="all">Todas</button>
+              <button class="filter-pill" type="button" data-status="discounted">En oferta</button>
+              <button class="filter-pill" type="button" data-status="adjusted">Precio ajustado</button>
+              <button class="filter-pill" type="button" data-status="base">Sin cambios</button>
+            </div>
+          </div>
+
+          <div id="adminBannerMsg" class="admin-message" hidden></div>
+
+          <div id="adminList" class="admin-list"></div>
+
+          <div id="adminPagination" class="catalog-pagination" hidden>
+            <p id="adminPaginationStatus" class="pagination-status"></p>
+            <div class="pagination-actions">
+              <button id="adminLoadMoreBtn" class="btn btn-dark" type="button">Mostrar 30 más</button>
+              <button id="adminShowAllBtn" class="btn btn-outline-dark" type="button">Mostrar todas</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="adminToast" class="admin-toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
