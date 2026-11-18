@@ -170,6 +170,7 @@
 
               <div id="heroShowcase" class="hero-showcase">
                 <button class="hero-card hero-card-main" type="button" data-hero-product="nike-air-ultra-p6000-hombre-negro">
+                  <span class="hero-card-discount" hidden></span>
                   <span class="hero-card-tag">Drop destacado</span>
                   <img src="imagenes/nike-air-ultra-p6000-hombre-negro.jpg" alt="Nike Air Ultra P6000 negro" />
                   <div class="hero-card-meta">
@@ -177,28 +178,39 @@
                       <span>Nike · Lifestyle</span>
                       <strong>Nike Air Ultra P6000</strong>
                     </div>
-                    <b class="hero-card-price">$ 150.000</b>
+                    <div class="hero-card-price-wrap">
+                      <del class="hero-card-price-old" hidden></del>
+                      <b class="hero-card-price">$ 150.000</b>
+                    </div>
                   </div>
                 </button>
                 <div class="hero-card-stack">
                   <button class="hero-card" type="button" data-hero-product="jordan-retro-hombre-azul-blanco-negro-verde-neon">
+                    <span class="hero-card-discount" hidden></span>
                     <img src="imagenes/jordan-retro-hombre-azul-blanco-negro-verde-neon.jpg" alt="Jordan Retro" />
                     <div class="hero-card-meta">
                       <div>
                         <span>Jordan · Retro</span>
                         <strong>Jordan Retro 5</strong>
                       </div>
-                      <b class="hero-card-price">$ 140.000</b>
+                      <div class="hero-card-price-wrap">
+                        <del class="hero-card-price-old" hidden></del>
+                        <b class="hero-card-price">$ 140.000</b>
+                      </div>
                     </div>
                   </button>
                   <button class="hero-card" type="button" data-hero-product="asics-superblast-hombre-azul-blanco-gris">
+                    <span class="hero-card-discount" hidden></span>
                     <img src="imagenes/asics-superblast-hombre-azul-blanco-gris.jpg" alt="Asics Superblast" />
                     <div class="hero-card-meta">
                       <div>
                         <span>Asics · Running</span>
                         <strong>Asics Superblast</strong>
                       </div>
-                      <b class="hero-card-price">$ 160.000</b>
+                      <div class="hero-card-price-wrap">
+                        <del class="hero-card-price-old" hidden></del>
+                        <b class="hero-card-price">$ 160.000</b>
+                      </div>
                     </div>
                   </button>
                 </div>
@@ -716,7 +728,10 @@
         <button class="product-media" type="button">
           <img loading="lazy" />
           <div class="product-badges">
-            <span class="badge-drop" hidden>Nuevo</span>
+            <div class="product-badges-left">
+              <span class="badge-discount" hidden></span>
+              <span class="badge-drop" hidden>Nuevo</span>
+            </div>
             <span class="badge-gender"></span>
           </div>
         </button>
@@ -726,7 +741,10 @@
           <p class="product-colorway"></p>
           <div class="product-foot">
             <div class="product-price-wrap">
-              <strong class="product-price"></strong>
+              <div class="product-price-row">
+                <strong class="product-price"></strong>
+                <del class="product-price-old" hidden></del>
+              </div>
               <span class="product-sizes-hint"></span>
             </div>
             <button class="product-cta" type="button">Elegir talla</button>

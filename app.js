@@ -1,6 +1,10 @@
 const WHATSAPP = '573217430829';
 const PAGE_SIZE = 16;
 const HERO_AUTOPLAY_MS = 7500;
+// Opcional: si no agregas la columna `precio_anterior` en catalogo.csv,
+// puedes indicar aquí el precio anterior real de las referencias en oferta.
+// Ejemplo: 'nike-cortez-hombre-blanco-negro': 180000
+const PREVIOUS_PRICES = {};
 
 const FALLBACK_SHOE_SVG =
   'data:image/svg+xml;charset=UTF-8,' +
@@ -222,7 +226,53 @@ function parseCSV(text) {
   );
 }
 
-function enrichProducts(rawRows) {
+function isDiscountPreviewMode() {
+  try {
+    return new URLSearchParams(location.search).get('preview') === '1';
+  } catch {
+    return false;
+  }
+}
+
+function renderPreviewBanner() {
+  if (document.querySelector('.preview-mode-banner')) return;
+  const bar = document.createElement('div');
+  bar.className = 'preview-mode-banner';
+  bar.innerHTML = `
+    <span><strong>Vista previa local activa:</strong> estás viendo los precios y descuentos editados en este navegador (aún no publicados en <code>descuentos.json</code>).</span>
+    <div class="preview-mode-actions">
+      <a href="gestion-descuentos/">Volver al editor</a>
+      <a href="${escapeHtml(location.pathname)}">Salir de vista previa</a>
+    </div>
+  `;
+  document.body.prepend(bar);
+}
+
+async function loadDiscounts() {
+  if (isDiscountPreviewMode()) {
+    try {
+      const raw = localStorage.getItem('mdt-discounts-preview');
+      renderPreviewBanner();
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object') return parsed;
+      }
+    } catch {
+      // ignore invalid preview JSON
+    }
+  }
+
+  try {
+    const response = await fetch(`descuentos.json?v=${Date.now()}`);
+    if (!response.ok) return {};
+    const parsed = await response.json();
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function enrichProducts(rawRows, discountsMap = {}) {
   const valid = rawRows.filter((p) => p.id && p.nombre);
   const total = valid.length;
   return valid.map((row, index) => {
@@ -235,8 +285,29 @@ function enrichProducts(rawRows) {
     const genderInfo = detectGenderInfo(row.id, sizes);
     const colorway = extractColorway(row.id);
 
+    const override = discountsMap && typeof discountsMap === 'object' ? discountsMap[row.id] : null;
+    const basePriceNum = priceNumber(row.precio);
+    const overridePriceNum =
+      override && typeof override === 'object' ? priceNumber(override.precio ?? override.precioDescuento) : 0;
+    const priceNum = overridePriceNum > 0 ? overridePriceNum : basePriceNum;
+    const effectivePrecio = overridePriceNum > 0 ? peso(overridePriceNum) : row.precio;
+
+    const rawPreviousPrice =
+      (override && typeof override === 'object' ? override.precioAnterior ?? override.precioNormal : '') ||
+      row.precio_anterior ||
+      row.precioAnterior ||
+      PREVIOUS_PRICES[row.id] ||
+      '';
+    const previousPriceNum = priceNumber(rawPreviousPrice);
+    const discountPercent =
+      priceNum > 0 && previousPriceNum > priceNum
+        ? Math.round(((previousPriceNum - priceNum) / previousPriceNum) * 100)
+        : 0;
+    const hasDiscount = discountPercent >= 1;
+
     return {
       ...row,
+      precio: effectivePrecio,
       index,
       isNewDrop: total - index <= 12,
       cleanName,
@@ -246,7 +317,11 @@ function enrichProducts(rawRows) {
       gender: genderInfo.gender,
       isHombre: genderInfo.isHombre,
       isMujer: genderInfo.isMujer,
-      priceNum: priceNumber(row.precio),
+      priceNum,
+      previousPriceNum: hasDiscount ? previousPriceNum : 0,
+      previousPriceText: hasDiscount ? peso(previousPriceNum) : '',
+      discountPercent,
+      hasDiscount,
       renderImage: toLocalRenderImage(row.imagen),
       whatsappImage: toWhatsappImageUrl(row.imagen)
     };
@@ -279,6 +354,8 @@ function syncHeroAndStoryFromCatalog() {
     const kicker = card.querySelector('.hero-card-meta span');
     const title = card.querySelector('.hero-card-meta strong');
     const price = card.querySelector('.hero-card-price');
+    const oldPrice = card.querySelector('.hero-card-price-old');
+    const discountBadge = card.querySelector('.hero-card-discount');
     if (img) {
       img.src = prod.renderImage;
       img.alt = prod.cleanName;
@@ -286,7 +363,18 @@ function syncHeroAndStoryFromCatalog() {
     }
     if (kicker) kicker.textContent = `${prod.brand} · ${prod.categoria}`;
     if (title) title.textContent = prod.cleanName;
-    if (price) price.textContent = money(prod.precio);
+    if (price) {
+      price.textContent = money(prod.precio);
+      price.classList.toggle('is-discounted', prod.hasDiscount);
+    }
+    if (oldPrice) {
+      oldPrice.hidden = !prod.hasDiscount;
+      oldPrice.textContent = prod.hasDiscount ? prod.previousPriceText : '';
+    }
+    if (discountBadge) {
+      discountBadge.hidden = !prod.hasDiscount;
+      discountBadge.textContent = prod.hasDiscount ? `-${prod.discountPercent}%` : '';
+    }
   });
 
   const storyImg = $('.story-media img');
@@ -300,10 +388,13 @@ function syncHeroAndStoryFromCatalog() {
 
 async function loadCatalog() {
   try {
-    const response = await fetch(`catalogo.csv?v=${Date.now()}`);
+    const [response, discountsMap] = await Promise.all([
+      fetch(`catalogo.csv?v=${Date.now()}`),
+      loadDiscounts()
+    ]);
     if (!response.ok) throw new Error('No se encontró el catálogo');
     const parsed = parseCSV(await response.text());
-    products = enrichProducts(parsed);
+    products = enrichProducts(parsed, discountsMap);
 
     if (!products.length) {
       renderEmptyCatalog();
@@ -390,12 +481,14 @@ function buildProductCardNode(product, { isFeatured = false, eager = false } = {
   const card = node.querySelector('.product-card');
   const mediaBtn = node.querySelector('.product-media');
   const img = node.querySelector('img');
+  const discountBadge = node.querySelector('.badge-discount');
   const dropBadge = node.querySelector('.badge-drop');
   const genderBadge = node.querySelector('.badge-gender');
   const kicker = node.querySelector('.product-kicker');
   const title = node.querySelector('.product-title');
   const colorway = node.querySelector('.product-colorway');
   const price = node.querySelector('.product-price');
+  const oldPrice = node.querySelector('.product-price-old');
   const sizesHint = node.querySelector('.product-sizes-hint');
   const cta = node.querySelector('.product-cta');
 
@@ -403,6 +496,12 @@ function buildProductCardNode(product, { isFeatured = false, eager = false } = {
   img.src = product.renderImage;
   img.alt = `${product.cleanName}${product.colorway ? ` — ${product.colorway}` : ''}`;
   attachImageFallback(img);
+
+  card.classList.toggle('has-discount', product.hasDiscount);
+  if (discountBadge) {
+    discountBadge.hidden = !product.hasDiscount;
+    discountBadge.textContent = product.hasDiscount ? `-${product.discountPercent}%` : '';
+  }
 
   if (isFeatured) {
     dropBadge.hidden = false;
@@ -423,6 +522,12 @@ function buildProductCardNode(product, { isFeatured = false, eager = false } = {
   }
 
   price.textContent = money(product.precio);
+  price.classList.toggle('is-discounted', product.hasDiscount);
+  if (oldPrice) {
+    oldPrice.hidden = !product.hasDiscount;
+    oldPrice.textContent = product.hasDiscount ? product.previousPriceText : '';
+  }
+
   if (product.sizes.length > 1) {
     sizesHint.textContent = `EUR ${product.sizes[0]}–${product.sizes[product.sizes.length - 1]}`;
   } else if (product.sizes.length === 1) {
@@ -655,7 +760,12 @@ function openProduct(id) {
         ${product.colorway ? `<p class="dialog-colorway">Color: ${escapeHtml(product.colorway)}</p>` : ''}
 
         <div class="dialog-price-row">
-          <strong class="dialog-price">${escapeHtml(money(product.precio))} COP</strong>
+          <strong class="dialog-price ${product.hasDiscount ? 'is-discounted' : ''}">${escapeHtml(money(product.precio))} COP</strong>
+          ${
+            product.hasDiscount
+              ? `<del class="dialog-price-old">${escapeHtml(product.previousPriceText)} COP</del><span class="dialog-discount-badge">-${product.discountPercent}%</span>`
+              : ''
+          }
         </div>
 
         <div class="dialog-shipping-pill">
